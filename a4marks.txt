@@ -1,0 +1,34 @@
+CS349 A4 Marking Scheme
+
+TA: Hemant
+Email: Hsurale@uwaterloo.ca
+
+
+== Technical Requirements [5] ==
+
+/5 - Android Studio project builds and runs.
+
+== Layout and Functional Requirements [50] ==
+
+/10 - The application follows a standard master-detail layout. The master view is a vertical list of items [3]. Tapping on an individual item transitions to a detail layout [5]. Tapping on the back button from detail view transitions back to the master view [2].
+
+/10 - The master view shows a list of projects by its title truncated or adjusted appropriately to fit the row width and height without overflowing or clipping [10].
+
+/10 - The detail view for each project contains the following information (in any layout): project header image [2], project description [2], research questions (curios) [2], team section displaying member names [2] and avatar images [2].
+
+/15 - Both the master and the detail view of the application support and auto-adjust to landscape and portrait orientation without any cropping or glitches [5 - master view, 5 - details view]. Details for different projects should follow a consistent layout despite having different amount of information [5].
+
+/15 - A search action is exposed where the search query is matched on both the project title [5] and the project description [5]. The application then updates the project list with the matched results [5]. Searching for an empty query or pressing on a “clear” button displays all projects [5].
+
+/15 - Data is fetched from the web service in a timely manner [5] using non-blocking operations [5]. A loading indicator is shown whenever a server-side operation is taking place [5].
+
+/10 - Application automatically performs server-side refresh at appropriate times (i.e. when navigating from master to detail view and back) or there is an explicit refresh button provided that performs a server-side data refresh [10]. 
+
+== Enhancements [10] ==
+
+/10 - Application incorporates one or more enhancements totalling 10%, as described in the requirements.
+
+
+Total:
+
+100/100
