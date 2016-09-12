@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CrowdCurio</string>
+    <string name="serachhint">serach</string>
+    <string name="title_project_detail">Project Detail</string>
+
+
+    <string-array name="searchType">
+        <item>name</item>
+        <item>description</item>
+    </string-array>
+
+    <string name="Search_Option">Option</string>
+</resources>

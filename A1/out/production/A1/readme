@@ -1,0 +1,137 @@
+#   This document will provide detailed  walk-through for the desktop
+# application Snakes. This readme are not only designed for marker,
+# but also any other potential user of the application.
+
+1.0 Introduction
+
+ The desktop application Snake is a traditional snake game implemented 
+using Jave version 1.8.0_91 with only native libraries namely Swing, AWT and
+and util. Aside from the traditional gameplay of Snake, this application 
+redesigned some traditional game rules and implemented several new features
+such as power-ups. This application is made by Ye Hua (Edward) Tan solely and
+it is used for CS349 assignment evaluation. Please contact the author for any
+uses beside purpose listed above. Acknowledgement goes to all resources provided
+ by CS349 of University of Waterloo.
+
+2.0 Implementation Environment and System Requirement
+
+  The software is implemented in Mac OSX version 10.11.2/10.11.3. All features
+of the application is tested in both Mac OSX and Linux. 
+
+  System Requirement:
+    Operating System: All system which supports Java
+    Java Version: 1.8.0_91
+    
+    No other requirements should be needed.
+
+3.0 Installation and Execution
+
+  The package includes makefile that will generate and runs the application:
+	$ make		- to compile application.
+	$ make run	- to execute application at recommanded specs.
+	$ make clean	- to uninstall compiled files.
+  
+  You can also manually run this application with the following instructions:
+	$ javac *.java
+	$ java Snake <max-FPS> <speed>
+ 
+  max-FPS supports value: 1-100 (testing purposes)
+  speed supporsts value: 1-10
+ 
+  Recommanded value will be used if non-specified.
+ 
+3.0 System Control, Game Control and Testing Environment
+
+	3.1 System Control
+	  System Control includes the following features in details:
+	    - Start Game (Press S) during main menu
+	    - Pause (Press P) while game is active.
+	    - Resume (Press P) while the game is paused.
+	    - Return to main menu (Press R) while the game is paused.
+		
+	  The game prevents user to use this four instruction when not under the
+	specific states listed above.
+	  To improve the user experience with the game, the game does not support
+	immediate restart of the game and prevent users to return to the main menu
+	without pausing the game. Reasons are listed below:
+	    - User should realize that the game is restarted.
+	    - Warnings or Instructions should be given before user can exit an 
+	      active game to prevent unwanted stops.
+
+	   Additionally, short instructions are given when user pauses the game.
+
+	3.1.1 Game Information
+	
+	  While in game, there are 3 types of information presented:
+		Speed: Current speed of the snake
+		Score: Total score player achieved
+		FPS: Frames per second (real values).
+	
+	3.2 Game Control and Game Rules
+
+	  For basic gameplay, checkout https://en.wikipedia.org/wiki/Snake_(video_game).
+          
+          The game uses arrow keys to specifies the movement of the snake. Player is only
+	allow to move left or right relative to the current direction it is moving.
+  
+	3.2.1 Score Calculation
+
+	  The game score calculation are based on the equation provided below:
+		score = 10 + s * x
+ 	where s is the speed of the game, from 1 - 10
+       	x is the base value of each food eaten, usually 5.
+      	
+          The game will always have 1 snake with length of 2 units and 1 food initially. Any
+	food will ate by the snake will add 1 unit to the snake. 
+  	To improve gameplay as time progresses, the number of food will increase by 1 for 
+	every 500 *2^(n-1) score that player achieve (n is the number of times the threshold
+	increases).
+
+	3.2.2 Power-Ups
+
+  	  In addtional to everything above, the game also have two types of power-ups that 
+	enrich the content of the game, visual representation will be shown with in-game 
+	instruction at the main menu. The two power-ups are:
+	
+	Steroid: Doubles the speed and the score player recieves for 3 seconds. This is known
+	       as Rampage. While in Rampage, the background colour turns red, and the speed will
+ 	       not show a numeric value, but Rampage on it.
+
+	Laxation: Upon eating this power-ups, your snake will shrink its size. Here are the 
+	    	specification of shrinking:
+		  - The snake reduces its unit number from its tail.
+		  - The snake cannot shrink below 2 units.
+		  - The snake will reduce 1 + ( 1 unit per 3 units of length ) up to 5 units.
+	
+	To prevent ambiguity, there is only 1 power-up at a time. The power-ups will spawn at
+	random time, at a unfrequent rate.
+
+	3.3 Testing Specs
+
+	  In order to support testings, I added few extra controls for testing purpose only:
+		- Spawn Steroid (Press Q)
+		- Spawn Laxation (Press W)
+		- Add/Reduce Speed (Press < or > )
+
+	  Also, since the Power-up is single-ton (pseudo), Spawning new power-ups will replace
+	the old power-ups on random location.
+
+	4.0 Additional Information
+
+	4.1 Speed Calculation
+	   Under perfect FPS, the speed should correspond to the following chart:
+		
+		Speed | Normal Units/s | Rampage Units/s
+		  1   |       1        |       2
+		  2   |       2	       |       4
+		  3   |       3	       |       6
+		  4   |       5        |      10
+	          5   |       6        |      12
+		  6   |       7        |      14 
+	   	  7   |       8        |      16
+		  8   |      10        |      20
+		  9   |      11        |      22 
+		 10   |      12        |      25
+ 
+	    Regarding that Rampage is not scaled under user friendly game beyond certain level. 
+	But of course, it is definitely playable. 

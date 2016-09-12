@@ -1,0 +1,47 @@
+CS349 A2 Marking Scheme
+
+TA: Alex Williams
+Email: Alex.Williams@uwaterloo.ca
+
+
+== Technical Requirements [15] ==
+
+5/5 - Makefile exists[1], `make`[3] and `make run`[2] works successfully with default arguments.
+
+10/10 - Model-View-Controller used effectively (i.e. shape model contained in a model class, at least two views used to represent the canvas and/or toolbars). [4 marks for the model, 3 marks for each view]
+
+
+== Functional Requirements [50] ==
+
+5/5 - Saving data. File-Save can be used to save the model (the user should be promoted for a file-save location using a JDialog) [2 marks for prompting the user; 3 marks for saving the file]. 
+
+5/5 - Loading data. File-Load can be used to load and restore the shapes that were saved using a JDialog. The view (e.g. window size, view-option) does not need to be restored, but all shapes should be saved and restored to the canvas, with the appropriate color, line thickness and so on. [2 marks for prompting the user; 3 marks for loading and restoring shape attributes properly]
+
+10/10 - Tool palette. Implementation of selection, erase, line drawing, circle drawing, rectangle and fill tools. Users can select each tool and it should be evident which tools are selected/active [2 marks for each tool; 4 marks for selection indicator].
+
+5/5 - Color palette. Displays at least 6 colors in a graphical view, which the user can select to set the property for drawing a new shape [8]. Also allows the user to select a color from the color-picker dialog. [2] 
+
+5/5 - Line thickness palette. Displays at least 3 line widths, graphically, and allows the user to select line width for new shapes. [3 marks for supporting at least 3 lines; 2 marks for showing them graphically].
+
+10/10 - Drawing and erasing shapes. User can select a tool and draw a shape (mouse_down to initiate, mouse_move to draw, mouse_up to finalize the shape). Erase will erase a shape. Previews are shown as the shape is drawn. [6 for drawing as described; 4 for preview]
+
+10/10 - Moving shapes. Users can move shapes around the screen by selecting, then dragging them. There should be an indication which shape is selected. [5 marks for moving, 5 marks for selection indicator]
+
+
+== Layout (25) ==
+
+5/5 - The window should be sized no larger than 1600x1200, and panels should remain consistent and usable as the window is resized. It is *not* necessary for individual panels to resize (i.e. they can remain fixed size or position), as long as the layout remains functional and consistent. [5 marks for a consistent layout that supports resizing the window].
+
+10/10 - View Options, View-Full Size. will keep the image the same size as the window is resized, adding scroll-bars if the window is reduced to be smaller than the canvas (it is acceptable to have scrollbars always appear in this mode) [6 marks for handling resizing, while maintaining a fixed canvas size; 4 marks for usable scrollbars]. 
+
+4/10 - View Options, View-Fit. Scale the image as the window is resized. Scaling should be uniform, or should be constrained to prevent shapes from being deformed [6 marks for scaling; 4 marks for maintaining uniform shape). 
+- Canvas should expand to full window and scale with the resize.
+
+== Enhancements [10] ==
+
+10/10 - Application incorporates one or more enhancements totalling 10%, as described in the requirements.
+
+
+Total:
+
+96/100

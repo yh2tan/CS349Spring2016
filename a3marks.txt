@@ -1,0 +1,29 @@
+CS349 A3 Marking Scheme
+TA: Hemant Surale
+Email: hsurale@uwaterloo.ca
+ 
+== Technical Requirements [5%] ==
+/5 - Android Studio project builds and runs.
+
+== Layout  [20%] ==
+/10 - A toolbar exists [2] with a set of buttons (selection rectangle, delete shape, rectangle, circle, line, fill colour [6]). Tapping on a tool button should visibly select it and de-select any previously selected button [2].
+
+/10 - Application supports drawing and adapts to both landscape and portrait orientation. The screen dynamically adjusts to the orientation, using a different layout for each one [6]. No tools, palettes or shapes are clipped or off-screen [4].
+
+== User Interface [30%] ==
+/15 - Colour palette. Displays at least 3 colour in a palette-style view [2], which the user can select to set the property for drawing a new shape [5]. Tapping on a color should visibly select it and de-select any previously selected color [3]. Tapping on the fill tool and tapping on a shape will fill the shape with that colour [5]. 
+
+/15 - Line thickness palette. Displays at least 3 line widths, graphically [2], and allows the user to select line width for new shapes [5]. Tapping on a line thickness should visibly select it and de-select any previously selected line thickness [3]. Selecting a shape and tapping on a line width will apply that line width to the existing shape [5].
+
+== Functional Requirements [35%] ==
+/15 - Drawing, and previewing shapes. User can tap to select a tool and draw a shape (one finger down to initiate, move finger to draw, finger up to finalize the shape) [10]. Previews are shown as the shape is drawn [5].
+
+/10 - Moving shapes. Users can move shapes around the screen by selecting (with the Selection tool), then dragging them with one finger [6]. There should be an indication which shape is selected [4].
+
+6/10 - Erase shapes. Tapping on the erase button and tapping a shape will erase a shape [6]. Tap-and-hold on erase to delete all the shapes at once [4].
+// unable to del all objects at once.
+== Enhancements [10%] ==
+/10 - Application incorporates one or more enhancements totalling 10%, as described in the requirements.
+
+Total:
+96/100

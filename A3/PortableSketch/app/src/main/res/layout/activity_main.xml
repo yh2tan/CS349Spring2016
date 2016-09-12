@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="yh2tan.portablesketch.MainActivity"
+    android:background="#f91c1c1c"
+    android:clickable="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="false"
+        android:layout_gravity="right"
+        android:paddingLeft="10dp"
+        android:paddingTop="20dp"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentEnd="false"
+        android:gravity="center_vertical|center_horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/drawcanvas"
+            android:gravity="center_horizontal">
+
+            <yh2tan.portablesketch.DrawView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/drawview"
+                android:background="@android:color/white"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="550dp"
+            android:layout_height="310dp"
+            android:background="@color/dim_foreground_material_dark"
+            android:paddingLeft="25dp">
+
+            <yh2tan.portablesketch.RadioButtonTable
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="35dp"
+                android:paddingLeft="20dp"
+                android:id="@+id/toolbar">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:id="@+id/Selection"
+                        android:layout_gravity="top|left|bottom|center|right"
+                        android:clickable="true"
+                        android:checked="true"
+                        android:contextClickable="true"
+                        android:background="@drawable/select1"
+                        android:button="@drawable/radio_btn_select" />
+
+                    <RadioButton
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:id="@+id/Line"
+                        android:background="@drawable/line0"
+                        android:clickable="true"
+                        android:button="@drawable/radio_btn_select" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RadioButton
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:id="@+id/Rectangle"
+                        android:button="@drawable/radio_btn_select"
+                        android:background="@drawable/rect0"
+                        android:clickable="true" />
+
+                    <RadioButton
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:id="@+id/Circle"
+                        android:background="@drawable/circle0"
+                        android:button="@drawable/radio_btn_select"
+                        android:layout_gravity="center"
+                        android:clickable="true" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RadioButton
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:id="@+id/Paint"
+                        android:background="@drawable/paint0"
+                        android:button="@drawable/radio_btn_select"
+                        android:clickable="true" />
+
+                    <RadioButton
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:id="@+id/Eraser"
+                        android:background="@drawable/erase0"
+                        android:button="@drawable/radio_btn_select"
+                        android:clickable="true" />
+                </TableRow>
+
+            </yh2tan.portablesketch.RadioButtonTable>
+
+
+            <yh2tan.portablesketch.RadioButtonTable
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/colorPallet"
+                android:paddingTop="40dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="10dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/black"
+                        android:button="@drawable/radio_btn_colors"
+                        android:background="@drawable/colorbox"
+                        android:checked="true"
+                        android:clickable="true" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/white"
+                        android:button="@drawable/radio_btn_colors"
+                        android:background="@drawable/colorbox"
+                        android:clickable="true" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/color3"
+                        android:button="@drawable/radio_btn_colors"
+                        android:background="@drawable/colorbox"
+                        android:clickable="true" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/color4"
+                        android:button="@drawable/radio_btn_colors"
+                        android:background="@drawable/colorbox"
+                        android:clickable="true" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/color5"
+                        android:button="@drawable/radio_btn_colors"
+                        android:background="@drawable/colorbox"
+                        android:clickable="true" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/color6"
+                        android:button="@drawable/radio_btn_colors"
+                        android:background="@drawable/colorbox"
+                        android:clickable="true" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/color7"
+                        android:button="@drawable/radio_btn_colors"
+                        android:background="@drawable/colorbox"
+                        android:clickable="true" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/color8"
+                        android:button="@drawable/radio_btn_colors"
+                        android:background="@drawable/colorbox"
+                        android:clickable="true" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/color9"
+                        android:button="@drawable/radio_btn_colors"
+                        android:background="@drawable/colorbox"
+                        android:clickable="true" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/color10"
+                        android:button="@drawable/radio_btn_colors"
+                        android:background="@drawable/colorbox"
+                        android:clickable="true" />
+                </TableRow>
+
+
+            </yh2tan.portablesketch.RadioButtonTable>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="40dp"
+                    android:paddingLeft="30dp"
+                    android:id="@+id/thickselect">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/lineThick0"
+                        android:checked="true"
+                        android:clickable="true"
+                        android:button="@drawable/radio_btn_thick" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/lineThick1"
+                        android:clickable="true"
+                        android:allowUndo="false"
+                        android:button="@drawable/radio_btn_thick1" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/lineThick2"
+                        android:button="@drawable/radio_btn_thick2"
+                        android:clickable="true" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/lineThick3"
+                        android:button="@drawable/radio_btn_thick3"
+                        android:clickable="true" />
+                </RadioGroup>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="20dp"
+                    android:paddingLeft="35dp"
+                    android:paddingRight="20dp">
+                    <Button
+                        android:id = "@+id/undo"
+                        android:layout_width="60dp"
+                        android:layout_height="35dp"
+                        android:background="@drawable/utilitybutton"
+                        android:text = "undo" />
+
+                    <Space
+                        android:layout_width="20dp"
+                        android:layout_height="wrap_content"
+                        />
+
+                    <Button
+                        android:id = "@+id/redo"
+                        android:layout_width="60dp"
+                        android:layout_height="35dp"
+                        android:background="@drawable/utilitybutton"
+                        android:text = "redo"
+                        />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="30dp"
+                    android:layout_height="5dp" />
+
+                <Button
+                    android:id = "@+id/clear"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/utilitybutton"
+                    android:text = "clear"
+                    android:layout_gravity="center_horizontal" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
